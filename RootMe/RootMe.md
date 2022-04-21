@@ -44,7 +44,7 @@ So, there is an Apache 2.4.29 server on port 80, and also ssh running on port 22
 
 We can visit the web page: 
 
-![web page](/RootMe/site.png)
+![web page](/RootMe/images/site.png)
 
 As we can see, also inspecting the page, there's nothing useful (for now). 
 
@@ -54,11 +54,11 @@ We can scan hidden directory using **gobuster**:
 
 As result we obtain: 
 
-![gobuster](/RootMe/gobuster.png)
+![gobuster](/RootMe/images/gobuster.png)
 
 The most interesting directory is */panel* and let's go visit it: 
 
-![panel](/RootMe/panel.png)
+![panel](/RootMe/images/panel.png)
 
 
 ## Task 3 - Gettin a shell
@@ -69,7 +69,7 @@ If you are using Kali distribution, you can directly uoload ``/usr/share/webshel
 
 Unfortunately, there appears to be a filter on php file. 
 
-![phpFilter](/RootMe/shell.png)
+![phpFilter](/RootMe/images/shell.png)
 
 So, I try to change the file extension to *.php5*.
 To obtain a reverse shell on our machine, we have to listen using netcat on port 1234 as follow: 
@@ -78,15 +78,15 @@ To obtain a reverse shell on our machine, we have to listen using netcat on port
 
 The upload was successfull: 
 
-![php5](/RootMe/shellPhp5.png)
+![php5](/RootMe/images/shellPhp5.png)
 
 Browsing to ``http://10.10.125.204/uploads/php-reverse-shell.php5`` we obtain our shell:
 
-![reverse](/RootMe/reverse.png)
+![reverse](/RootMe/images/reverse.png)
 
 Let's cat user.txt flag
 
-![flag](/RootMe/flag.png)
+![flag](/RootMe/images/flag.png)
 
 
 ## Task 4 - Privilege escalation
